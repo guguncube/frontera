@@ -9,7 +9,6 @@ from frontera.core.components import DistributedBackend
 from frontera.contrib.backends import CommonBackend
 from frontera.contrib.backends.cassandra.components import Metadata, Queue, States
 from frontera.utils.misc import load_object
-import logging
 
 
 class CassandraBackend(CommonBackend):

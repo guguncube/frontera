@@ -209,6 +209,7 @@ class MessageBus(BaseMessageBus):
         self.hostname_partitioning = settings.get('QUEUE_HOSTNAME_PARTITIONING')
         self.conn = SimpleClient(server)
 
+
     def spider_log(self):
         return SpiderLogStream(self)
 
