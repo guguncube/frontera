@@ -175,11 +175,15 @@ Here is how to run DB Worker splitted in batch creation and log consumption::
     $ python -m frontera.worker.db --config frontera.worker_settings --no-batches
     $ python -m frontera.worker.db --config frontera.worker_settings --no-batches
 
+If you have an often and mass updated Crawling Strategy you can also run the strategy consumer standalone:
+    $ python -m frontera.worker.db --config frontera.worker_settings --no-batches --no-incoming
+
 
 --no-batches          Disables periodical generation of new batches.
 --no-incoming         Disables periodical incoming topic consumption.
 
 If you run DB Worker in several instances you shouldn't set the DROP_ALL_TABLES Options of the Database because each Process deletes and creates the Tables.
+Also - to run several DB Worker or Strategy worker in parallel you must usw Kafka as Massage Bus. ZeroMQ supports at the moment only one DB and one Strategy Worker.
 
 Next, let's start strategy worker with sample strategy for crawling the internet in Breadth-first manner.::
 
